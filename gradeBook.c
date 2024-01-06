@@ -20,8 +20,8 @@ void addstd(struct Student students[],int *numstd)
 
     for(int i=1;i<=maxsub;i++)
     {
-        printf("Enter grade for subject %d:"i);
-        scnaf("%f",&students[*numstd].grades[i]);
+        printf("Enter grade for subject %d:",i);
+        scanf("%f",&students[*numstd].grades[i]);
     }
 
     (*numstd)++;
@@ -33,7 +33,7 @@ void addstd(struct Student students[],int *numstd)
     }
 }
 
-    void filehandling(struct Studen students[],int numstd)
+    void filehandling(struct Student students[],int numstd)
     {
         FILE *file=fopen("gradebook.txt","w");
         if(file==NULL)
@@ -49,7 +49,7 @@ void addstd(struct Student students[],int *numstd)
 
             for(int j=1;j<=maxsub;j++)
             {
-                fprint(file,"%.2lf",students[i].grades[j]);
+                fprintf(file,"%.2lf",students[i].grades[j]);
             }
             fprintf(file,"\n\n");
         }
@@ -68,7 +68,7 @@ void addstd(struct Student students[],int *numstd)
 
             for(int j=1;j<=maxsub;j++)
             {
-                printf("%.2lf",students[i].grade[j]);
+                printf("%.2lf",students[i].grades[j]);
             }
 
             printf("\n");

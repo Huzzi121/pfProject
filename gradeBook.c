@@ -95,13 +95,28 @@ int main()
                 addstd(students,&numstd);
              }
              else if(choice==2)
+             {
+                filehandling(students,numstd); 
+             }
+             else if(choice==3)
+             {
+                displayresult(students,numstd);
+             }
+             else if(choice==4)
+             {
+                printf("Exiting...");
+                exit(0);
+             }
+             else
+             {
+                printf("invalid choice. Please enter 1,2,3 or 4.\n");
+    
+             }
+
 
         }
        
+        return 0;
 
 
 }
-
-
-}
-

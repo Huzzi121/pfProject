@@ -31,6 +31,7 @@ void addstd(struct Student students[],int *numstd)
     {
         printf("Max number of student reached!\n");
     }
+}
 
     void filehandling(struct Studen students[],int numstd)
     {

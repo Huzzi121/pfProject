@@ -74,7 +74,34 @@ void addstd(struct Student students[],int *numstd)
         }
     }
 
+int main()
+{
+    struct Student students[maxstd];
+    int numstd=0;
+    int choice;
 
-    
+    printf("\nStudent Gradebook Menu:\n");
+        printf("1. Add Student\n");
+        printf("2. Save to File\n");
+        printf("3. Display Report\n");
+        printf("4. Exit\n");
+
+        printf("Enter your choice (1/2/3/4): ");
+        while (1)
+        {
+             scanf("%d", &choice);
+             if(choice==1)
+             {
+                addstd(students,&numstd);
+             }
+             else if(choice==2)
+
+        }
+       
+
+
+}
+
+
 }
 

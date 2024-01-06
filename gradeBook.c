@@ -48,12 +48,33 @@ void addstd(struct Student students[],int *numstd)
 
             for(int j=1;j<=maxsub;j++)
             {
-                fprint(file,"%lf",students[i].grades[j]);
+                fprint(file,"%.2lf",students[i].grades[j]);
             }
             fprintf(file,"\n\n");
         }
         fclose(file);
         printf("GradeBook saved to file Succesfully!!");
     }
+
+    void displayresult(struct Student students[],int numstd)
+    {
+        printf("/nGradeBook Result Card\n");
+
+        for(int i=1;i<=numstd;i++)
+        {
+            printf("Student Name: %s\n",students[i].name);
+            printf("Subject Grades: ");
+
+            for(int j=1;j<=maxsub;j++)
+            {
+                printf("%.2lf",students[i].grade[j]);
+            }
+
+            printf("\n");
+        }
+    }
+
+
+    
 }
 

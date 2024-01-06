@@ -38,7 +38,7 @@ void addstd(struct Student students[],int *numstd)
         FILE *file=fopen("gradebook.txt","w");
         if(file==NULL)
         {
-            printf("Error opening file!!");
+            printf("Error opening file!!\n");
             return; //or we can also use exit(1) also;
         }
 
@@ -51,7 +51,7 @@ void addstd(struct Student students[],int *numstd)
             {
                 fprintf(file,"%.2lf",students[i].grades[j]);
             }
-            fprintf(file,"\n\n");
+            fprintf(file,"\n");
         }
         fclose(file);
         printf("GradeBook saved to file Succesfully!!\n");
@@ -124,3 +124,6 @@ int main()
 
 
 }
+/*  i copied this code to dev C++ and file handling wasa working perfectly
+    i think its an ide problem which is out of my capacity to fix so kindly
+    sir bear with me.*/

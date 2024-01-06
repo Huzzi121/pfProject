@@ -11,3 +11,25 @@ struct Student
     double grades[maxsub];
 };
 
+void addstd(struct Student students[],int *numstd)
+{
+    if(*numstd<maxstd)
+    {
+        printf("Enter the name of the students:");
+        scanf("%s",students[*numstd].name);
+
+    for(int i=1;i<=maxsub;i++)
+    {
+        printf("Enter grade for subject %d:"i);
+        scnaf("%f",&students[*numstd].grades[i]);
+    }
+
+    (*numstd)++;
+    printf("Student added successfully!\n");
+    }
+    else
+    {
+        printf("Max number of student reached!\n");
+    }
+}
+

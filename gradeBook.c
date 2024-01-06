@@ -31,5 +31,29 @@ void addstd(struct Student students[],int *numstd)
     {
         printf("Max number of student reached!\n");
     }
+
+    void filehandling(struct Studen students[],int numstd)
+    {
+        FILE *file=fopen("gradebook.txt","w");
+        if(file==NULL)
+        {
+            printf("Error opening file!!");
+            return; //or we can also use exit(1) also;
+        }
+
+        for(int i=0;i<numstd;i++)
+        {
+            fprintf(file,"name:%s\n",students[i].name);
+            fprintf(file,"grades: ");
+
+            for(int j=1;j<=maxsub;j++)
+            {
+                fprint(file,"%lf",students[i].grades[j]);
+            }
+            fprintf(file,"\n\n");
+        }
+        fclose(file);
+        printf("GradeBook saved to file Succesfully!!");
+    }
 }
 

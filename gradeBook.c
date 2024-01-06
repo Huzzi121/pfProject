@@ -18,10 +18,10 @@ void addstd(struct Student students[],int *numstd)
         printf("Enter the name of the students:");
         scanf("%s",students[*numstd].name);
 
-    for(int i=1;i<=maxsub;i++)
+    for(int i=0;i<maxsub;++i)
     {
-        printf("Enter grade for subject %d:",i);
-        scanf("%f",&students[*numstd].grades[i]);
+        printf("Enter grade for subject %d:",i+1);
+        scanf("%lf",&students[*numstd].grades[i]);
     }
 
     (*numstd)++;
@@ -42,31 +42,31 @@ void addstd(struct Student students[],int *numstd)
             return; //or we can also use exit(1) also;
         }
 
-        for(int i=0;i<numstd;i++)
+        for(int i=0;i<numstd;++i)
         {
             fprintf(file,"name:%s\n",students[i].name);
             fprintf(file,"grades: ");
 
-            for(int j=1;j<=maxsub;j++)
+            for(int j=0;j<maxsub;++j)
             {
                 fprintf(file,"%.2lf",students[i].grades[j]);
             }
             fprintf(file,"\n\n");
         }
         fclose(file);
-        printf("GradeBook saved to file Succesfully!!");
+        printf("GradeBook saved to file Succesfully!!\n");
     }
 
     void displayresult(struct Student students[],int numstd)
     {
-        printf("/nGradeBook Result Card\n");
+        printf("\nGradeBook Result Card\n");
 
-        for(int i=1;i<=numstd;i++)
+        for(int i=0;i<numstd;++i)
         {
             printf("Student Name: %s\n",students[i].name);
             printf("Subject Grades: ");
 
-            for(int j=1;j<=maxsub;j++)
+            for(int j=0;j<maxsub;++j)
             {
                 printf("%.2lf",students[i].grades[j]);
             }
@@ -81,15 +81,18 @@ int main()
     int numstd=0;
     int choice;
 
-    printf("\nStudent Gradebook Menu:\n");
-        printf("1. Add Student\n");
-        printf("2. Save to File\n");
-        printf("3. Display Report\n");
-        printf("4. Exit\n");
+    
 
-        printf("Enter your choice (1/2/3/4): ");
+       
         while (1)
         {
+           
+            printf("\nStudent Gradebook Menu:\n");
+            printf("1. Add Student\n");
+            printf("2. Save to File\n");
+            printf("3. Display Report\n");
+            printf("4. Exit\n");
+            printf("Enter your choice (1/2/3/4): ");
              scanf("%d", &choice);
              if(choice==1)
              {
